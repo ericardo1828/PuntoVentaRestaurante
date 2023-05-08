@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29733B5C-F38A-4CF3-B5F7-95B75F79665A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sol_PuntoVenta.Presentacion</RootNamespace>
+    <AssemblyName>Sistema de Punto de Venta</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\GrupoDatSoft_Negocio\Instaladores_Sistemas\Sistema de Punto de Venta\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>https://grupodatsoft.net/</SupportUrl>
+    <ProductName>Sistema de Punto de Venta</ProductName>
+    <PublisherName>Grupo DatSoft</PublisherName>
+    <SuiteName>GrupoDatSoftApps</SuiteName>
+    <ApplicationRevision>39</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Sol_PuntoVenta.Presentacion.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>74D48C087352A7C45A38F66FCC6B3A0D03ED7794</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Sol_PuntoVenta.Presentacion_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconosistema.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuraciones\Frm_Areas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\Frm_Areas.Designer.cs">
+      <DependentUpon>Frm_Areas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Frm_Cargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\Frm_Cargos.Designer.cs">
+      <DependentUpon>Frm_Cargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Frm_Imagenes_Predeterminadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\Frm_Imagenes_Predeterminadas.Designer.cs">
+      <DependentUpon>Frm_Imagenes_Predeterminadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Frm_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\Frm_Usuarios.Designer.cs">
+      <DependentUpon>Frm_Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Reportes\DS_Configuraciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Configuraciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Reportes\Frm_Rpt_Areas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\Reportes\Frm_Rpt_Areas.Designer.cs">
+      <DependentUpon>Frm_Rpt_Areas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Reportes\Frm_Rpt_Cargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\Reportes\Frm_Rpt_Cargos.Designer.cs">
+      <DependentUpon>Frm_Rpt_Cargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Reportes\Frm_Rpt_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\Reportes\Frm_Rpt_Usuarios.Designer.cs">
+      <DependentUpon>Frm_Rpt_Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Frm_ActualizarPasswordUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\Frm_ActualizarPasswordUsuario.Designer.cs">
+      <DependentUpon>Frm_ActualizarPasswordUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Frm_MesaAbierta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\Frm_MesaAbierta.Designer.cs">
+      <DependentUpon>Frm_MesaAbierta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MiMesa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MiMesa.Designer.cs">
+      <DependentUpon>MiMesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MiProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MiProducto.Designer.cs">
+      <DependentUpon>MiProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AreaDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AreaDespacho.Designer.cs">
+      <DependentUpon>Frm_AreaDespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Cierre_Turnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Cierre_Turnos.Designer.cs">
+      <DependentUpon>Frm_Cierre_Turnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Consultas_Boletas_Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Consultas_Boletas_Facturas.Designer.cs">
+      <DependentUpon>Frm_Consultas_Boletas_Facturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_login.Designer.cs">
+      <DependentUpon>Frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mesas.Designer.cs">
+      <DependentUpon>Frm_Mesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MiDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MiDashBoard.Designer.cs">
+      <DependentUpon>Frm_MiDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_PuntoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PuntoVenta.Designer.cs">
+      <DependentUpon>Frm_PuntoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Categorias.Designer.cs">
+      <DependentUpon>Frm_Categorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Productos.Designer.cs">
+      <DependentUpon>Frm_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Recuperar_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Recuperar_Password.Designer.cs">
+      <DependentUpon>Frm_Recuperar_Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_RegistrarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_RegistrarPedidos.Designer.cs">
+      <DependentUpon>Frm_RegistrarPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Reporte_Facturas_Fecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Reporte_Facturas_Fecha.Designer.cs">
+      <DependentUpon>Frm_Reporte_Facturas_Fecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Reporte_Boletas_Fecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Reporte_Boletas_Fecha.Designer.cs">
+      <DependentUpon>Frm_Reporte_Boletas_Fecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Reporte_Personalizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Reporte_Personalizados.Designer.cs">
+      <DependentUpon>Frm_Reporte_Personalizados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Reporte_Tickets_PV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Reporte_Tickets_PV.Designer.cs">
+      <DependentUpon>Frm_Reporte_Tickets_PV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Reporte_Tickets_PV_anulados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Reporte_Tickets_PV_anulados.Designer.cs">
+      <DependentUpon>Frm_Reporte_Tickets_PV_anulados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_SubFamilias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_SubFamilias.Designer.cs">
+      <DependentUpon>Frm_SubFamilias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Familias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Familias.Designer.cs">
+      <DependentUpon>Frm_Familias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\DS_PuntoVenta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_PuntoVenta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DS_PuntoVenta_Reportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_PuntoVenta_Reportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_AreaDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_AreaDespacho.Designer.cs">
+      <DependentUpon>Frm_Rpt_AreaDespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Boletas_Facturas_PV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Boletas_Facturas_PV.Designer.cs">
+      <DependentUpon>Frm_Rpt_Boletas_Facturas_PV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Boletas_Fecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Boletas_Fecha.Designer.cs">
+      <DependentUpon>Frm_Rpt_Boletas_Fecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Categorias.Designer.cs">
+      <DependentUpon>Frm_Rpt_Categorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Facturas_Fecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Facturas_Fecha.Designer.cs">
+      <DependentUpon>Frm_Rpt_Facturas_Fecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Familias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Familias.Designer.cs">
+      <DependentUpon>Frm_Rpt_Familias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_ImprimirComanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_ImprimirComanda.Designer.cs">
+      <DependentUpon>Frm_Rpt_ImprimirComanda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Imprimir_Boleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Imprimir_Boleta.Designer.cs">
+      <DependentUpon>Frm_Rpt_Imprimir_Boleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Imprimir_Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Imprimir_Factura.Designer.cs">
+      <DependentUpon>Frm_Rpt_Imprimir_Factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Imprimir_Precuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Imprimir_Precuenta.Designer.cs">
+      <DependentUpon>Frm_Rpt_Imprimir_Precuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Mesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Mesas.Designer.cs">
+      <DependentUpon>Frm_Rpt_Mesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Productos.Designer.cs">
+      <DependentUpon>Frm_Rpt_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Productos_Vendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Productos_Vendidos.Designer.cs">
+      <DependentUpon>Frm_Rpt_Productos_Vendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Productos_Vendidos_PV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Productos_Vendidos_PV.Designer.cs">
+      <DependentUpon>Frm_Rpt_Productos_Vendidos_PV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Productos_Vendidos_x_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Productos_Vendidos_x_Usuarios.Designer.cs">
+      <DependentUpon>Frm_Rpt_Productos_Vendidos_x_Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_PuntoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_PuntoVenta.Designer.cs">
+      <DependentUpon>Frm_Rpt_PuntoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_SubFamilias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_SubFamilias.Designer.cs">
+      <DependentUpon>Frm_Rpt_SubFamilias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Tickets_PV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Tickets_PV.Designer.cs">
+      <DependentUpon>Frm_Rpt_Tickets_PV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Tickets_PV_Anulados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Tickets_PV_Anulados.Designer.cs">
+      <DependentUpon>Frm_Rpt_Tickets_PV_Anulados.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Configuraciones\Frm_Areas.resx">
+      <DependentUpon>Frm_Areas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Frm_Cargos.resx">
+      <DependentUpon>Frm_Cargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Frm_Imagenes_Predeterminadas.resx">
+      <DependentUpon>Frm_Imagenes_Predeterminadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Frm_Usuarios.resx">
+      <DependentUpon>Frm_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Reportes\Frm_Rpt_Areas.resx">
+      <DependentUpon>Frm_Rpt_Areas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Reportes\Frm_Rpt_Cargos.resx">
+      <DependentUpon>Frm_Rpt_Cargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Reportes\Frm_Rpt_Usuarios.resx">
+      <DependentUpon>Frm_Rpt_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Reportes\Rpt_Areas.rdlc" />
+    <EmbeddedResource Include="Configuraciones\Reportes\Rpt_Cargos.rdlc" />
+    <EmbeddedResource Include="Configuraciones\Reportes\Rpt_Usuarios.rdlc" />
+    <EmbeddedResource Include="Controles\Frm_ActualizarPasswordUsuario.resx">
+      <DependentUpon>Frm_ActualizarPasswordUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Frm_MesaAbierta.resx">
+      <DependentUpon>Frm_MesaAbierta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MiMesa.resx">
+      <DependentUpon>MiMesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MiProducto.resx">
+      <DependentUpon>MiProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AreaDespacho.resx">
+      <DependentUpon>Frm_AreaDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Cierre_Turnos.resx">
+      <DependentUpon>Frm_Cierre_Turnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Consultas_Boletas_Facturas.resx">
+      <DependentUpon>Frm_Consultas_Boletas_Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_login.resx">
+      <DependentUpon>Frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mesas.resx">
+      <DependentUpon>Frm_Mesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MiDashBoard.resx">
+      <DependentUpon>Frm_MiDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PuntoVenta.resx">
+      <DependentUpon>Frm_PuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Categorias.resx">
+      <DependentUpon>Frm_Categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Productos.resx">
+      <DependentUpon>Frm_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Recuperar_Password.resx">
+      <DependentUpon>Frm_Recuperar_Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_RegistrarPedidos.resx">
+      <DependentUpon>Frm_RegistrarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Reporte_Facturas_Fecha.resx">
+      <DependentUpon>Frm_Reporte_Facturas_Fecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Reporte_Boletas_Fecha.resx">
+      <DependentUpon>Frm_Reporte_Boletas_Fecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Reporte_Personalizados.resx">
+      <DependentUpon>Frm_Reporte_Personalizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Reporte_Tickets_PV.resx">
+      <DependentUpon>Frm_Reporte_Tickets_PV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Reporte_Tickets_PV_anulados.resx">
+      <DependentUpon>Frm_Reporte_Tickets_PV_anulados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_SubFamilias.resx">
+      <DependentUpon>Frm_SubFamilias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Familias.resx">
+      <DependentUpon>Frm_Familias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_AreaDespacho.resx">
+      <DependentUpon>Frm_Rpt_AreaDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Boletas_Facturas_PV.resx">
+      <DependentUpon>Frm_Rpt_Boletas_Facturas_PV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Boletas_Fecha.resx">
+      <DependentUpon>Frm_Rpt_Boletas_Fecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Categorias.resx">
+      <DependentUpon>Frm_Rpt_Categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Facturas_Fecha.resx">
+      <DependentUpon>Frm_Rpt_Facturas_Fecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Familias.resx">
+      <DependentUpon>Frm_Rpt_Familias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_ImprimirComanda.resx">
+      <DependentUpon>Frm_Rpt_ImprimirComanda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Imprimir_Boleta.resx">
+      <DependentUpon>Frm_Rpt_Imprimir_Boleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Imprimir_Factura.resx">
+      <DependentUpon>Frm_Rpt_Imprimir_Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Imprimir_Precuenta.resx">
+      <DependentUpon>Frm_Rpt_Imprimir_Precuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Mesas.resx">
+      <DependentUpon>Frm_Rpt_Mesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Productos.resx">
+      <DependentUpon>Frm_Rpt_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Productos_Vendidos.resx">
+      <DependentUpon>Frm_Rpt_Productos_Vendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Productos_Vendidos_PV.resx">
+      <DependentUpon>Frm_Rpt_Productos_Vendidos_PV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Productos_Vendidos_x_Usuarios.resx">
+      <DependentUpon>Frm_Rpt_Productos_Vendidos_x_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_PuntoVenta.resx">
+      <DependentUpon>Frm_Rpt_PuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_SubFamilias.resx">
+      <DependentUpon>Frm_Rpt_SubFamilias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Tickets_PV.resx">
+      <DependentUpon>Frm_Rpt_Tickets_PV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Tickets_PV_Anulados.resx">
+      <DependentUpon>Frm_Rpt_Tickets_PV_Anulados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rpt_AreaDespacho.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Boletas_Facturas_PV.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Boletas_Fecha.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Categorias.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Familias.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_ImprimirComanda.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Imprimir_Boleta.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Imprimir_Factura.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Imprimir_Precuenta.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Mesas.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Productos.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Productos_Vendidos.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Productos_Vendidos_x_Usuarios.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_PuntoVenta.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_SubFamilias.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Tickets_PV.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Tickets_PV_anulados.rdlc" />
+    <EmbeddedResource Include="Reportes\Rtp_Facturas_Fecha.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Productos_Vendidos_PV.rdlc" />
+    <None Include="Configuraciones\Reportes\DS_Configuraciones.xsc">
+      <DependentUpon>DS_Configuraciones.xsd</DependentUpon>
+    </None>
+    <None Include="Configuraciones\Reportes\DS_Configuraciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Configuraciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Configuraciones\Reportes\DS_Configuraciones.xss">
+      <DependentUpon>DS_Configuraciones.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reportes\DS_PuntoVenta.xsc">
+      <DependentUpon>DS_PuntoVenta.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_PuntoVenta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_PuntoVenta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DS_PuntoVenta.xss">
+      <DependentUpon>DS_PuntoVenta.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_PuntoVenta_Reportes.xsc">
+      <DependentUpon>DS_PuntoVenta_Reportes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DS_PuntoVenta_Reportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_PuntoVenta_Reportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DS_PuntoVenta_Reportes.xss">
+      <DependentUpon>DS_PuntoVenta_Reportes.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sol_PuntoVenta.Entidades\Sol_PuntoVenta.Entidades.csproj">
+      <Project>{1977a81c-812a-4ea3-87c3-2dec6da1eea6}</Project>
+      <Name>Sol_PuntoVenta.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sol_PuntoVenta.Negocio\Sol_PuntoVenta.Negocio.csproj">
+      <Project>{736459d4-6fe5-42f9-bba9-e87865e871c4}</Project>
+      <Name>Sol_PuntoVenta.Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cuchilleria.ico" />
+    <Content Include="iconosistema.ico" />
+    <Content Include="perfil-del-usuario.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+</Project>
