@@ -25,6 +25,7 @@ namespace Sol_PuntoVenta.Presentacion.Controles
         DataTable TablaTicket = new DataTable(); // esta tabla es para los ticket seleccionado y que se procesará para precuenta
         DataTable Tabla_Division = new DataTable(); //esta tabla es para la division de cuentas de los tickets seleccionados
         DataTable Tabla_detalle_boleta = new DataTable(); //esta tabla es para el detalle de la boleta
+        DataTable Tabla_detalle_factura = new DataTable(); //esta tabla es para el detalle de la boleta
         private int _Codigo_pr1;
         private string _Descripcion_pr1;
         private string _Preciounitario_pr1;
@@ -78,6 +79,16 @@ namespace Sol_PuntoVenta.Presentacion.Controles
             this.Tabla_detalle_boleta.Columns.Add("Cantidad_bo", System.Type.GetType("System.String"));
             this.Tabla_detalle_boleta.Columns.Add("Total_bo", System.Type.GetType("System.String"));           
             this.Tabla_detalle_boleta.Columns.Add("Codigo_ti", System.Type.GetType("System.Int32"));            
+        }
+        private void Crear_TablaDetalleFactura()
+        {
+            this.Tabla_detalle_boleta = new DataTable("tabla_detalle_boleta");
+
+            this.Tabla_detalle_factura.Columns.Add("Codigo_pr", System.Type.GetType("System.Int32"));
+            this.Tabla_detalle_factura.Columns.Add("Preciounitario_pr", System.Type.GetType("System.String"));
+            this.Tabla_detalle_factura.Columns.Add("Cantidad_fa", System.Type.GetType("System.String"));
+            this.Tabla_detalle_factura.Columns.Add("Total_fa", System.Type.GetType("System.String"));
+            this.Tabla_detalle_factura.Columns.Add("Codigo_ti", System.Type.GetType("System.Int32"));
         }
         #endregion
 
@@ -1790,7 +1801,7 @@ namespace Sol_PuntoVenta.Presentacion.Controles
             {
                 try
                 {
-                    this.Crear_TablaDetalleBoleta();
+                    this.Crear_TablaDetalleFactura();
                     int Ycodigo_cl;
                     string Ycliente;
                     string Ynrodocumento_cl;
@@ -1825,6 +1836,15 @@ namespace Sol_PuntoVenta.Presentacion.Controles
                         Edf.Total_fa = Convert.ToDecimal(row.Cells["Total_ti"].Value);
                         Edf.Codigo_ti = Convert.ToInt32(row.Cells["Codigo_ti"].Value);
 
+                        // EMD DEBUG
+                        this.Tabla_detalle_factura.Rows.Add(Edf.Codigo_pr,
+                                                           Edf.Preciounitario_pr,
+                                                           Edf.Cantidad_fa,
+                                                           Edf.Total_fa,
+                                                           Edf.Codigo_ti);
+
+
+
                         this.Tabla_detalle_boleta.Rows.Add(Edf.Codigo_pr,
                                                            Edf.Preciounitario_pr,
                                                            Edf.Cantidad_fa,
@@ -1845,7 +1865,7 @@ namespace Sol_PuntoVenta.Presentacion.Controles
                                                                         Ynro_factura,
                                                                         Ycodigo_us,
                                                                         Ycodigo_me,
-                                                                        Tabla_detalle_boleta);
+                                                                        Tabla_detalle_factura);
                     if (Tabla_Resul_bol.Rows.Count > 0)
                     {
                         Pnl_detalle_bo_fa.Visible = false;
